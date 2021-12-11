@@ -1,0 +1,14 @@
+POST /enc
+{
+  "password": "password",
+  "salt": "saltsalt",
+  "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}
+
+POST /dec
+{
+  "password": "password",
+  "salt": "saltsalt",
+  "iv": "72G64bALwTvNBUc8zA1F+w==",
+  "encrypted": "Kp4csGldTvVnMPfm+wcc50PMreWL1H//XJ+1GxSI6qtYR4Oum1S4kC8RqDoeIWvOjOYd1dnt01ZknEhCRDLA0A=="
+}

@@ -1,0 +1,60 @@
+swagger: '2.0'
+info: {title: CryptConnector, description: 暗号処理コネクタ, version: '1.0'}
+host: example.net
+basePath: /
+schemes: [https]
+consumes: []
+produces: []
+paths:
+  /dec:
+    post:
+      responses:
+        default:
+          description: default
+          schema:
+            type: object
+            properties:
+              decrypted: {type: string, description: decrypted}
+      summary: dec
+      operationId: Dec
+      description: decrypt messages
+      parameters:
+      - name: body
+        in: body
+        required: false
+        schema:
+          type: object
+          properties:
+            password: {type: string, description: password}
+            salt: {type: string, description: salt}
+            iv: {type: string, description: iv}
+            encrypted: {type: string, description: encrypted}
+  /enc:
+    post:
+      responses:
+        default:
+          description: default
+          schema:
+            type: object
+            properties:
+              iv: {type: string, description: iv}
+              encrypted: {type: string, description: encrypted}
+      summary: enc
+      description: encrypt messages
+      operationId: Enc
+      parameters:
+      - name: body
+        in: body
+        required: false
+        schema:
+          type: object
+          properties:
+            password: {type: string, description: password}
+            salt: {type: string, description: salt}
+            plaintext: {type: string, description: plaintext}
+definitions: {}
+parameters: {}
+responses: {}
+securityDefinitions: {}
+security: []
+tags: []
